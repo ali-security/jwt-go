@@ -57,12 +57,10 @@ func TestVerifyAud(t *testing.T) {
 
 
 	for _, test := range tests {
-		t.RunTests(test.Name, func(t *testing.T) {
-			got := test.MapClaims.VerifyAudience(test.Comparison, test.Required)
+		got := test.MapClaims.VerifyAudience(test.Comparison, test.Required)
 
-			if got != test.Expected {
-				t.Errorf("Expected %v, got %v", test.Expected, got)
-			}
-		})
+		if got != test.Expected {
+			t.Errorf("Expected %v, got %v", test.Expected, got)
+		}
 	}
 }
