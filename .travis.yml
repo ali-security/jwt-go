@@ -1,7 +1,6 @@
 language: go
 
 script:
-    - go mod graph
     - go vet ./...
     - go test -v ./...
 
