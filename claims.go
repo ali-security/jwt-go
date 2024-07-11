@@ -99,7 +99,7 @@ func verifyAud(aud []string, cmp string, required bool) bool {
 
 	var stringClaims string
 	for _, a := range aud {
-		if subtle.ConstantTimeCompare([]byte(a), []byte(cmp)) != 0 {
+		if len(a) != len(cmp) && subtle.ConstantTimeCompare([]byte(a), []byte(cmp)) != 0 {
 			result = true
 		}
 		stringClaims = stringClaims + a
