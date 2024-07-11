@@ -57,7 +57,7 @@ func TestVerifyAud(t *testing.T) {
 
 
 	for _, test := range tests {
-		t.Run(test.Name, func(t *testing.T) {
+		t.RunTests(test.Name, func(t *testing.T) {
 			got := test.MapClaims.VerifyAudience(test.Comparison, test.Required)
 
 			if got != test.Expected {
